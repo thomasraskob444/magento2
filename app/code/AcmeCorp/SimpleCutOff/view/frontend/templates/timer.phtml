@@ -1,0 +1,16 @@
+<?php
+$remaining_time = $this->getRemainingTime();
+?>
+<?php if ($remaining_time): ?>
+    <?php
+    $startTime = $this->getCutOffStartTime();
+    $endTime = $this->getCutOffEndTime();
+
+    $startTimeString = $startTime->format('m/d/Y g:i:s A P');
+    $endTimeString = $endTime->format('m/d/Y g:i:s A P');
+    ?>
+    <p id="cutoff-msg">Order in next <span id="remaining-time"><?php echo $remaining_time; ?></span> for guaranteed next day delivery</p>
+    <script type="text/x-magento-init">
+    { "#cutoff-msg": { "AcmeCorp_SimpleCutOff/js/timer": {"startTimeString":"<?php echo $startTimeString; ?>", "endTimeString":"<?php echo $endTimeString; ?>"} } }
+    </script>
+<?php endif; ?>

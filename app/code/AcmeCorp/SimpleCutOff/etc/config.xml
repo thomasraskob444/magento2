@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <acmecorp_simplecutoff>
+            <general>
+                <start_time>11/11/2016 00:00:00 AM</start_time>
+                <end_time>11/12/2016 4:00:00 PM</end_time>
+            </general>
+        </acmecorp_simplecutoff>
+    </default>
+</config>

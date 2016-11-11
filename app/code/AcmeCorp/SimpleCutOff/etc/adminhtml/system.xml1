@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="acmecorp" translate="label" sortOrder="151">
+            <label>AcmeCorp</label>
+        </tab>
+        <section id="acmecorp_simplecutoff" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>AcmeCorp SimpleCutOff</label>
+            <tab>acmecorp</tab>
+            <resource>Magento_Backend::admin</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>AcmeCorp SimpleCutOff Settings</label>
+                <field id="start_time" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start Time</label>
+                </field>
+                <field id="end_time" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>End Time</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
