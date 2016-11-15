@@ -5,16 +5,16 @@ class Timer extends \Magento\Framework\View\Element\Template
 {
     public function getCutOffStartTime() {
         $timezone = new \DateTimeZone('GMT');
-//        $start_time_string = "11/11/2016 00:00:00 AM";
         $start_time_string = $this->_scopeConfig->getValue('acmecorp_simplecutoff/general/start_time');
+        $start_time_string = gmdate("m/d/Y ").$start_time_string;
         $start_time = \DateTime::createFromFormat("m/d/Y g:i:s A", $start_time_string, $timezone);
         return $start_time;
     }
 
     public function getCutOffEndTime() {
         $timezone = new \DateTimeZone('GMT');
-//        $end_time_string = "11/11/2016 4:00:00 PM";
         $end_time_string = $this->_scopeConfig->getValue('acmecorp_simplecutoff/general/end_time');
+        $end_time_string = gmdate("m/d/Y ").$end_time_string;
         $end_time = \DateTime::createFromFormat("m/d/Y g:i:s A", $end_time_string, $timezone);
         return $end_time;
     }
