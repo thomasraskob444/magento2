@@ -10,11 +10,13 @@ define([
         tickCount: null,
         startTime: null,
         endTime: null,
+        remainingTimeElement: null,
 
         _create: function() {
             this.startTime = new Date(this.options.startTimeString);
             this.endTime = new Date(this.options.endTimeString);
 
+            this.remainingTimeElement = jQuery(this.element).find("#remaining-time");
             this.tickCount = 0;
             this.intervalId = setInterval(this._tick.bind(this), 1000 * 30);
         },
@@ -23,9 +25,9 @@ define([
             var now = new Date();
             if (now <= this.endTime) {
                 var diff = this.endTime - now;
-                var h = parseInt(diff / (3600 * 1000));
-                var m = parseInt(diff / (60*1000)) - h * 60;
-                jQuery(this.element).find("#remaining-time").text(h + "Hrs " + m + "Mins ");
+                var h = Math.floor(diff / (3600 * 1000));
+                var m = Math.floor(diff / (60*1000)) - h * 60;
+                this.remainingTimeElement.text(h + "Hrs " + m + "Mins ");
             } else {
                 jQuery(this.element).text("ENDED");
                 clearInterval(this.intervalId);
